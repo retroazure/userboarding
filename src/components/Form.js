@@ -6,8 +6,10 @@ export default function Form(props){
     return(
              
             <form>
-                <div>
-                <label>Name:
+
+                <div className="container">
+            
+                <label>Name: 
                     <input className="name-input"
                     type="text"
                     name = "name"
@@ -15,10 +17,10 @@ export default function Form(props){
                     maxLength="20"
                     />        
                 </label>
-                </div>
+           
     
-                <div>
-                <label>Email:
+       
+                <label>Email: 
                     <input className="email-input"
                     type="text"
                     name = "email"
@@ -26,25 +28,28 @@ export default function Form(props){
                     maxLength="20"
                     />        
                 </label>
-                </div>
+    
                 
-                <div>
-                <label>Password:
+           
+                <label>Password: 
                     <input className="password-input"
                     type="password"
                     name = "password"
                     value={values.password}
                     />        
                 </label>
-                </div>
+               
                 
-                <div>
+            
                 <label>Terms of Service
                     <input className="tos-input"
                     type="checkbox"
                     name="tos"
                     value={values.tos}/>
                 </label>
+
+        
+                    <button onClick={onSubmit}>Submit</button>
                 </div>
             
             </form>
