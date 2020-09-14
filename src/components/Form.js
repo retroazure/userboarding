@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default function Form(props){
-    const {onInput, onSubmit, values} = props;
+    const { onInput, onSubmit, values, disabled, errors, onCheckboxChange} = props;
 
     return(
              
-            <form>
+            <form onSubmit={onSubmit}>
 
                 <div className="container">
             
@@ -15,6 +15,7 @@ export default function Form(props){
                     name = "name"
                     value={values.name}
                     maxLength="20"
+                    onChange={onInput}
                     />        
                 </label>
            
@@ -26,6 +27,7 @@ export default function Form(props){
                     name = "email"
                     value={values.email}
                     maxLength="20"
+                    onChange={onInput}
                     />        
                 </label>
     
@@ -36,6 +38,7 @@ export default function Form(props){
                     type="password"
                     name = "password"
                     value={values.password}
+                    onChange={onInput}
                     />        
                 </label>
                
@@ -45,11 +48,19 @@ export default function Form(props){
                     <input className="tos-input"
                     type="checkbox"
                     name="tos"
-                    value={values.tos}/>
+                    value={values.tos}
+                    onChange = {onCheckboxChange}/>
                 </label>
 
-        
-                    <button onClick={onSubmit}>Submit</button>
+                    <button disabled={disabled} onClick={onSubmit}>Submit</button>
+                
+                </div>
+
+                <div className="errors">
+                <div>{errors.name}</div>
+                <div>{errors.email}</div>
+                <div>{errors.password}</div>
+                <div>{errors.tos}</div>
                 </div>
             
             </form>
