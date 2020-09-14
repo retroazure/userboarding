@@ -76,10 +76,10 @@ function App() {
     evt.preventDefault();
 
     const newUser = {
-      name : formValue.name.trim(),
-      email: formValue.email.trim(),
-      role: formValue.role.trim(),
-      tos: formValue.tos.trim(),
+      name : formValue.name,
+      email: formValue.email,
+      password: formValue.password,
+      tos: formValue.tos,
     }
     
     postUsers(newUser);

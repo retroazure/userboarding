@@ -9,6 +9,8 @@ const formSchema = yup.object().shape({
     .trim()
     .email('The email must be a valid email address')
     .required('An email is required!'),
+    password: yup.string()
+    .required("A password is required!") ,
     tos: yup.string().required('The Terms Of Service are required to be accepted.'),
 })
 
