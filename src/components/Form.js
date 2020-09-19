@@ -79,7 +79,7 @@ let Form = props => {
 
     
 
-    let onFormInput = event => {
+    let onFormInput = (event) => {
 
         let checked = event.target.parentElement.parentElement.querySelector('.terms').checked;
 
@@ -110,13 +110,15 @@ let Form = props => {
             })
 
         //Sets form state
-
+        formState[event.target.name] = event.target.value;            
+        
         setFormState({
 
             ...formState,
-            [event.target.name]: event.target.value,
-            terms: checked
-            
+            terms:checked
+            // ...formState,
+            // [event.target.name]: event.target.value,
+            // terms: checked  
         });
 
         event.persist()
