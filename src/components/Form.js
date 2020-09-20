@@ -210,7 +210,7 @@ let Form = props => {
 
             </label>
 
-            <button disabled={true}>
+            <button disabled={true} className = 'submit'>
                 Submit
             </button>
 
