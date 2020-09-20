@@ -93,7 +93,7 @@ let Form = props => {
                 setInputErrors({
 
                     ...inputErrors,
-                    [event.target.name]: ''
+                    [event.target.name]: '',
 
                 });
 
@@ -103,8 +103,7 @@ let Form = props => {
                 setInputErrors({
 
                     ...inputErrors,
-                    [event.target.name]: err.errors[0]
-
+                    [event.target.name]: err.errors[0],
                 });
 
             })
@@ -115,7 +114,7 @@ let Form = props => {
         setFormState({
 
             ...formState,
-            terms:checked
+            terms: checked
             // ...formState,
             // [event.target.name]: event.target.value,
             // terms: checked  
@@ -131,7 +130,7 @@ let Form = props => {
         const formSchema = yup.object().shape({ //Had to copy schema into here for it to work
             name: yup
                 .string()
-                .min(1, "Type your name")
+                .min(3, "Type your name")
                 .required("Name is Required"),
             email: yup
                 .string()
@@ -163,7 +162,7 @@ let Form = props => {
 
                 Name
 
-                <input 
+                <input className='input-username'
                 name='name' 
                 type='text' 
                 value={formState.name}
@@ -176,7 +175,7 @@ let Form = props => {
 
                 Email
 
-                <input name='email' 
+                <input name='email' className='input-email'
                 type='text' 
                 value={formState.email} 
                 onChange={event => onFormInput(event)}>
@@ -219,6 +218,7 @@ let Form = props => {
                 <h2>{inputErrors.name}</h2>
                 <h2 className='emailerr'>{inputErrors.email}</h2>
                 <h2>{inputErrors.password}</h2>
+                <h2>{inputErrors.terms}</h2>
 
             </div>
 
